@@ -6,6 +6,11 @@ const menuItemTemplate = document.querySelector("#menu-item-template");
 const ordersButtonSpan = document.querySelector(".order-button span");
 const orderButton = document.querySelector(".order-button");
 
+const switchMenuButton = document.querySelector("#switch");
+switchMenuButton.addEventListener("click", (evt) => {
+    alert("Menu has been switched");
+});
+
 const menuItemTemplateHTML = menuItemTemplate.innerHTML;
 const api = new API("https://ooh-menu-api.onrender.com");
 
