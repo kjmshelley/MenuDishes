@@ -3,12 +3,15 @@ const navContainerList = document.querySelector(".nav-container-list");
 const menuTitle = document.querySelector("#menu-title");
 const menuItemsContainer = document.querySelector(".menu-items");
 const menuItemTemplate = document.querySelector("#menu-item-template");
+const ordersButtonSpan = document.querySelector(".order-button span");
+const orderButton = document.querySelector(".order-button");
 
 const menuItemTemplateHTML = menuItemTemplate.innerHTML;
 const api = new API("https://ooh-menu-api.onrender.com");
 
 const menuNavItems = [];
 let dataMenu = [];
+let orders = [];
 
 const formatTypeName = (type) => `${type[0].toUpperCase()}${type.substring(1)}`;
 
@@ -44,7 +47,7 @@ function loadNavItems() {
     listItems.forEach(l => {
         l.addEventListener("click", (evt) => {
             const type = l.dataset.type;
-            menuTitle.innerText = formatTypeName(type);
+            menuTitle.innerText = type === "main" ? `${formatTypeName(type)} Dishes` : formatTypeName(type);
             
             // remove the active class
             listItems.forEach(ll => ll.classList.remove("nav-container-list-item-active"));
@@ -58,18 +61,45 @@ function loadNavItems() {
 }
 
 function loadMenuItems(type) {
-    const dishes = dataMenu.filter(item => item.type === type);
+    let dishes = [];
+    if (Array.isArray(type)) { // this will be a list of orders
+        let listOfOrders = type;
+        dishes = dataMenu.filter(item => listOfOrders.indexOf(item.id) > -1);
+        menuTitle.innerText = "My Orders";
+        document.querySelectorAll(".nav-container-list-item").forEach(ll => ll.classList.remove("nav-container-list-item-active"));
+    } else {
+        dishes = dataMenu.filter(item => item.type === type);
+    }
+    
     let dishesHTML = "";
     for(const dish of dishes) {
         let html = menuItemTemplateHTML;
         html = html.replace("{{menu-item-picture}}", `/assets/img/${dish.img}`);
         html = html.replace("{{menu-item-name}}", dish.dish);
         html = html.replace("{{menu-item-price}}", dish.price);
+        html = html.replace("{{id}}", dish.id);
 
        dishesHTML += html; 
     }
 
     menuItemsContainer.innerHTML = dishesHTML;
+
+    // we need to re attach the event to the order buttons
+    const buttons = document.querySelectorAll(".button");
+    if (buttons.length === 0) return;
+
+    if (Array.isArray(type)) { // this will be a list of orders
+        buttons.forEach(btn => btn.style.display = "none");
+        return;
+    }
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", evt => {
+            const id = btn.dataset.id;
+            orders.push(parseInt(id));
+            ordersButtonSpan.innerText = orders.length;
+        });
+    });
 }
 
 (async () => {
@@ -77,6 +107,11 @@ function loadMenuItems(type) {
         dataMenu = await api.get("/api/menu");
         loadNavItems();
         loadMenuItems("main");
+
+        orderButton.addEventListener("click", evt => {
+            loadMenuItems(orders);
+        });
+
     } catch (ex) {
         console.log(ex);
         menuItemsContainer.innerHTML = "<h3>Error downloading menu...</h3>";

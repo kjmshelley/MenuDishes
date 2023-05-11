@@ -13,6 +13,7 @@
     --orange: #FF7F11;
     --light-gray: #b3b3b3;
     --light-blue: #5dd1f8;
+    --blue: #0d6efd;
     font-size: 10px;
 
     box-sizing: border-box;
@@ -64,6 +65,39 @@ html, body, #app {
 
     .nav-container-list-item-active {
         background-color: var(--light-blue);
+    }
+
+    .nav-container-orders {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-container-orders-button {
+    }
+
+    .order-button {
+        background-color: var(--orange);
+        border: 1px solid var(--orange);
+        color: #FFF;
+
+        font-weight: bold;
+        font-size: 2rem;
+        font-weight: bold;
+        padding: .8em;
+        cursor: pointer;
+
+        border-radius: 5px;;
+    }
+    
+    .order-button span {
+        color: var(--orange);
+        background-color: #FFF;
+        border: 1px solid #FFF;
+        border-radius: 5px;
+        padding: .2em .5em;
+        font-weight: bolder;
     }
     /*****************************************************/
 
@@ -117,6 +151,10 @@ html, body, #app {
     .menu-item-description {
         height: 50%;
         padding: .5em;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .menu-item-name {
@@ -125,11 +163,18 @@ html, body, #app {
         font-weight: bolder;
     }
 
-    .menu-item-price {
-
+    .button {
+        background-color: var(--blue);
+        border: 1px solid var(--blue);
+        font-weight: bold;
+        color: #FFF;
+        padding: .5em;
+        cursor: pointer;
     }
-
-
+    .button:hover {
+        background-color: var(--light-blue);
+        border: 1px solid var(--light-blue);
+    }
     /*****************************************************/
 
 }

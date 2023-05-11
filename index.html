@@ -18,42 +18,42 @@
 <body>
     <main id="app">
         <nav class="nav-container">
-            <h2>Menu</h2>
-            <ul class="nav-container-list">
-            </ul>
+            <div>
+                <h2>Menu</h2>
+                <ul class="nav-container-list">
+                </ul>
+            </div>
+
+            <div class="nav-container-orders">
+                <div class="nav-container-orders-button">
+                    <div class="order-button">
+                        Your Orders <span>0</span>
+                    </div>
+                </div>
+            </div>
         </nav>
 
         <div class="dish-container">
             <h1 id="menu-title">Main Dishes</h1>
 
             <div class="menu-items">
-                
             </div>
         </div>
-        
-        <!-- <div class="col-3">
-            <div class="img-container">
-                <img src="" alt="Image" />
-            </div>
-
-            
-
-            <div class="order-summary">
-                <div>Your Order</div>
-                <div class="order-summary-total">0</div>
-            </div>
-        </div> -->
-        
     </main>
 
     <template id="menu-item-template">
-        <div class="menu-item" data-id="{{id}}">
-            <div data-id="{{id}}" class="menu-item-picture">
-                <img data-id="{{id}}" src="{{menu-item-picture}}" />
+        <div class="menu-item">
+            <div class="menu-item-picture">
+                <img src="{{menu-item-picture}}" />
             </div>
             <div class="menu-item-description">
-                <div class="menu-item-name">{{menu-item-name}}</div>
-                <div class="menu-item-price">${{menu-item-price}}</div>
+                <div>
+                    <div class="menu-item-name">{{menu-item-name}}</div>
+                    <div class="menu-item-price">${{menu-item-price}}</div>
+                </div>
+                <div class="button" data-id="{{id}}">
+                    Order
+                </div>
             </div>
         </div>
     </template>
