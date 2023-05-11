@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="/assets/css/small-device.css" />
+    <link rel="stylesheet" href="/assets/css/medium-device.css" />
+    <link rel="stylesheet" href="/assets/css/menu.css" />
+</head>
+<body>
+    <main id="app">
+        <nav class="nav-container">
+            <h2>Menu</h2>
+            <ul class="nav-container-list">
+            </ul>
+        </nav>
+
+        <div class="dish-container">
+            <h1 id="menu-title">Main Dishes</h1>
+
+            <div class="menu-items">
+                
+            </div>
+        </div>
+        
+        <!-- <div class="col-3">
+            <div class="img-container">
+                <img src="" alt="Image" />
+            </div>
+
+            
+
+            <div class="order-summary">
+                <div>Your Order</div>
+                <div class="order-summary-total">0</div>
+            </div>
+        </div> -->
+        
+    </main>
+
+    <template id="menu-item-template">
+        <div class="menu-item" data-id="{{id}}">
+            <div data-id="{{id}}" class="menu-item-picture">
+                <img data-id="{{id}}" src="{{menu-item-picture}}" />
+            </div>
+            <div class="menu-item-description">
+                <div class="menu-item-name">{{menu-item-name}}</div>
+                <div class="menu-item-price">${{menu-item-price}}</div>
+            </div>
+        </div>
+    </template>
+
+    <script src="/assets/js/api.js"></script>
+    <script src="/assets/js/app.js"></script>
+</body>
+</html>

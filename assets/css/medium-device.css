@@ -1,0 +1,103 @@
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 801px) {
+
+    /************************ LEFT SIDE *************************/
+    .nav-container {
+        height: 100vh;
+        width: 20%;
+
+        background-color: var(--dark-gray);
+    }
+
+    .nav-container h2 {
+        font-size: 3rem;
+        color: #FFF;
+        padding-left: 1.3em;
+    }
+    .nav-container ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        color: #FFF;
+    }
+
+    .nav-container ul li {
+        padding: 1em;
+        padding-left: 2em;
+        font-weight: 600;
+
+        font-size: 2.3rem;
+    }
+
+    .nav-container ul li:hover {
+        background-color: var(--light-blue);
+        cursor: pointer;
+    }
+
+    .nav-container-list-item-active {
+        background-color: var(--light-blue);
+    }
+    /*****************************************************/
+
+
+    /************************ RIGHT SIDE *************************/
+    .dish-container {
+        height: 100vh;
+        width: 100%;
+        padding-left: 2em;
+
+        font-size: 2.5rem;
+    }
+
+    .menu-items {
+        /* height: 100vh; */
+        display: flex;
+        flex-direction: row;
+        
+        flex-wrap: wrap;
+    }
+
+    .menu-item {
+        display: flex;
+        flex-direction: column;
+
+        width: 40%;
+        height: 40%;
+
+        border: 1px solid var(--light-gray);
+        border-radius: 5px;
+
+        margin-right: 1em;
+        margin-bottom: 1em;
+    }
+
+    .menu-item-picture {
+        height: 70%;
+        border-radius: 5px;
+    }
+
+    .menu-item-picture img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        /* show what happens when using border: 5px; */
+        /* you might want to zoom in */
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+    }
+
+    .menu-item-description {
+        height: 50%;
+        padding: .5em;
+    }
+
+    .menu-item-name {
+        color:#000;    
+        letter-spacing: 1px;
+        font-weight: bolder;
+    }
+    /*****************************************************/
+
+}
+
+
