@@ -1,0 +1,136 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --mindaro: #CBE896;
+    --babyPowder: #FFFFFC;
+    --khaki: #BEB7A4;
+    
+    --red: #FF1B1C;
+
+    --dark-gray: #434a54;
+    --orange: #FF7F11;
+    --light-gray: #b3b3b3;
+    --light-blue: #5dd1f8;
+    --blue: #0d6efd;
+    font-size: 10px;
+
+    box-sizing: border-box;
+}
+
+.row {
+    height: 100%;
+}
+
+html, body, #app {
+    height: 100%!important;
+    margin: 0;
+}
+
+nav {
+    height: 100%!important;
+    width: 20%;
+    padding: 0!important;
+    background-color: var(--dark-gray);
+    padding-top: 30px!important;
+}
+
+nav h2 {
+    font-size: 3rem;
+    color: #FFF;
+    padding-left: 1.3em;
+}
+
+nav ul {
+    height: 100%!important;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    color: #FFF;
+}
+
+nav ul li {
+    padding: 1em;
+    padding-left: 2em;
+    font-weight: 600;
+
+    font-size: 2.3rem;
+}
+
+nav ul li:hover {
+    background-color: var(--light-blue);
+    cursor: pointer;
+}
+
+.active {
+    background-color: var(--light-blue);
+}
+
+.dish-container {
+    height: 100%;
+    padding: 1em;
+
+    font-size: 2.5rem;
+}
+
+#menu-title {
+    font-size: 4rem!important;
+    font-weight: 900;
+}
+
+img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    /* show what happens when using border: 5px; */
+    /* you might want to zoom in */
+    /* border-top-right-radius: 4px;
+    border-top-left-radius: 4px; */
+}
+
+.menu-item-name {
+    color:#000;    
+    letter-spacing: 1px;
+    font-weight: bolder;
+}
+
+button {
+    font-size: 2rem!important;
+}
+/* button {
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+    font-weight: bold;
+    color: #FFF;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover {
+    background-color: var(--light-blue);
+    border: 1px solid var(--light-blue);
+} */
+
+.order-button {
+    background-color: var(--orange);
+    border: 1px solid var(--orange);
+    color: #FFF;
+
+    font-weight: bold;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: .8em;
+    cursor: pointer;
+
+    border-radius: 5px;;
+}
+
+.order-button span {
+    color: var(--orange);
+    background-color: #FFF;
+    border: 1px solid #FFF;
+    border-radius: 5px;
+    padding: .2em .5em;
+    font-weight: bolder;
+}
