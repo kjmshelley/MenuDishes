@@ -21,6 +21,10 @@
             <div>
                 <h2>Menu</h2>
                 <ul class="nav-container-list">
+                    <li class="active">Main Dishes</li>
+                    <li>Salad</li>
+                    <li>Soup</li>
+                    <li>Dessert</li>
                 </ul>
             </div>
 
@@ -36,13 +40,13 @@
         <div class="dish-container">
             <h1 id="menu-title">Main Dishes</h1>
 
-            <div class="menu-items">
+            <div class="menu-items row">
             </div>
         </div>
     </main>
 
     <template id="menu-item-template">
-        <div class="menu-item">
+        <div class="menu-item col-3">
             <div class="menu-item-picture">
                 <img src="{{menu-item-picture}}" />
             </div>
@@ -57,8 +61,5 @@
             </div>
         </div>
     </template>
-
-    <script src="/assets/js/api.js"></script>
-    <script src="/assets/js/app.js"></script>
 </body>
 </html>
